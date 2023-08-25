@@ -11,4 +11,6 @@ public interface ITodosRepository
     public Task<IList<Todo>> GetTodos(string label = null, bool? isComplete = null);
 
     public Task AddTodo(Todo todo);
+
+    public Task UpdateTodo(Todo todo);
 }

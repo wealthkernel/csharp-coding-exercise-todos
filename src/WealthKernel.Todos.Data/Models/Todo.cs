@@ -9,4 +9,12 @@ public class Todo
     public string Label { get; set; }
 
     public bool IsComplete { get; set; }
+
+    internal Todo Clone() => new()
+    {
+        Id = Id,
+        Title = Title,
+        Label = Label,
+        IsComplete = IsComplete,
+    };
 }
