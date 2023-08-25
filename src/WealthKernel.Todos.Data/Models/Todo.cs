@@ -7,4 +7,6 @@ public class Todo
     public string Title { get; set; }
 
     public string Label { get; set; }
+
+    public bool IsComplete { get; set; }
 }

@@ -16,11 +16,12 @@ public class InMemoryTodosRepository : ITodosRepository
         return Task.FromResult(_todos.GetValueOrDefault(id));
     }
 
-    public Task<IList<Todo>> GetTodos(string label = null)
+    public Task<IList<Todo>> GetTodos(string label = null, bool? isComplete = null)
     {
         var todos= _todos.Values.AsEnumerable();
 
         if (!string.IsNullOrEmpty(label)) todos = todos.Where(t => t.Label == label);
+        if (isComplete.HasValue) todos = todos.Where(t => t.IsComplete == isComplete.Value);
 
         return Task.FromResult<IList<Todo>>(todos.ToArray());
     }

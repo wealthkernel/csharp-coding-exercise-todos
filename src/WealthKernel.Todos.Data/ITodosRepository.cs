@@ -8,7 +8,7 @@ public interface ITodosRepository
 {
     public Task<Todo> GetTodo(string id);
 
-    public Task<IList<Todo>> GetTodos(string label = null);
+    public Task<IList<Todo>> GetTodos(string label = null, bool? isComplete = null);
 
     public Task AddTodo(Todo todo);
 }
