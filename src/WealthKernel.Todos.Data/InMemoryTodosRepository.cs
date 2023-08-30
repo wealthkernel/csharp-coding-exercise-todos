@@ -7,7 +7,7 @@ using WealthKernel.Todos.Data.Models;
 
 namespace WealthKernel.Todos.Data;
 
-public class InMemoryTodosRepository : ITodosRepository
+public class InMemoryTodosRepository
 {
     private readonly ConcurrentDictionary<string, Todo> _todos = new();
 
